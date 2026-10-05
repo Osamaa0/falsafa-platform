@@ -1,0 +1,793 @@
+
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#101827" />
+    <meta
+      name="description"
+      content="اختبار تفاعلي في الفلسفة والعلوم الإنسانية للصف الثالث الثانوي الأدبي."
+    />
+
+    <title>اختبار الفلسفة والعلوم الإنسانية</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Tajawal:wght@400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+
+    <div class="ambient ambient--one" aria-hidden="true"></div>
+    <div class="ambient ambient--two" aria-hidden="true"></div>
+
+    <main id="app" class="app-shell">
+
+      <!-- =========================
+           شاشة البداية
+      ========================== -->
+      <section
+        id="start-screen"
+        class="screen screen--start is-active"
+        aria-labelledby="start-title"
+      >
+
+        <div class="start-layout">
+
+          <div class="brand-mark" aria-label="فلسفة ببوصلة">
+            <span class="brand-mark__icon" aria-hidden="true">
+              <span></span>
+            </span>
+
+            <span class="brand-mark__word">
+              فلسفة <em>ببوصلة</em>
+            </span>
+          </div>
+
+
+          <div class="start-copy">
+
+            <p class="eyebrow">
+              <span class="eyebrow__line"></span>
+              جلسة مراجعة مركّزة
+            </p>
+
+            <h1 id="start-title">
+              اختبر فهمك،
+              <span>لا ذاكرتك فقط.</span>
+            </h1>
+
+            <p class="start-lead">
+              اختبار تفاعلي مبني على كتاب الفلسفة والعلوم الإنسانية.
+              سؤال واحد في كل مرة، ومساحة كافية لتفكيرك.
+            </p>
+
+
+            <!-- أزرار البداية والاستكمال -->
+            <div id="start-actions">
+
+              <button
+                id="start-button"
+                class="button button--primary button--large"
+                type="button"
+              >
+                <span> ابدأ الاختبار الشامل</span>
+                <span class="button__arrow" aria-hidden="true">←</span>
+              </button>
+
+              <button
+  id="unit-select-button"
+  class="button button--ghost"
+  type="button"
+>
+  اختر الوحدة
+  <span aria-hidden="true">←</span>
+</button>
+
+              <!-- يظهر لاحقًا إذا كان هناك اختبار محفوظ -->
+              <div
+                id="resume-box"
+                class="resume-box"
+                hidden
+              >
+
+                <div class="resume-box__text">
+
+                  <strong>
+                    لديك اختبار غير مكتمل
+                  </strong>
+
+                  <span id="resume-progress">
+                    أجبت عن 0 من 115 سؤالًا
+                  </span>
+
+                </div>
+
+
+                <div class="resume-box__actions">
+
+                  <button
+                    id="continue-button"
+                    class="button button--primary"
+                    type="button"
+                  >
+                    متابعة الاختبار
+                    <span aria-hidden="true">←</span>
+                  </button>
+
+
+                  <button
+                    id="new-test-button"
+                    class="button button--ghost"
+                    type="button"
+                  >
+                    اختبار جديد
+                  </button>
+
+                </div>
+
+              </div>
+
+            </div>
+
+
+            <p class="keyboard-hint">
+              <kbd>1</kbd>–<kbd>4</kbd>
+              لاختيار الإجابة
+
+              <span>·</span>
+
+              <kbd>←</kbd>
+              للمتابعة
+            </p>
+
+          </div>
+
+
+          <!-- بطاقة معلومات الاختبار -->
+          <div class="start-card">
+
+            <div class="start-card__topline">
+
+              <span>
+                ملف الاختبار
+              </span>
+
+              <span class="status-dot">
+                <i></i>
+                جاهز
+              </span>
+
+            </div>
+
+
+            <div class="start-card__title">
+              الفلسفة والعلوم
+              <br />
+              الإنسانية
+            </div>
+
+
+            <div class="start-card__meta">
+              الثالث الثانوي · الفرع الأدبي
+            </div>
+
+
+            <div class="start-card__divider"></div>
+
+
+            <div class="stats-grid">
+
+              <div class="stat">
+                <strong id="total-count">115</strong>
+                <span>سؤالًا</span>
+              </div>
+
+              <div class="stat">
+                <strong id="lesson-count">29</strong>
+                <span>درسًا</span>
+              </div>
+
+              <div class="stat">
+                <strong>06</strong>
+                <span>وحدات</span>
+              </div>
+
+            </div>
+
+
+            <div class="start-card__note">
+
+              <span class="note-icon">
+                ↗
+              </span>
+
+              <span>
+                يمكنك تعديل إجابتك قبل إنهاء الاختبار.
+              </span>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <footer class="start-footer">
+
+          <span>
+            نسخة مراجعة تعليمية
+          </span>
+
+          <span>
+            المصدر: كتاب الفلسفة والعلوم الإنسانية — الجزء الأول
+          </span>
+
+        </footer>
+
+      </section>
+
+
+
+      <!-- =========================
+           شاشة الاختبار
+      ========================== -->
+      <section
+        id="quiz-screen"
+        class="screen screen--quiz"
+        aria-labelledby="question-text"
+        hidden
+      >
+
+        <header class="topbar">
+
+          <div class="brand-mark brand-mark--compact">
+
+            <span
+              class="brand-mark__icon"
+              aria-hidden="true"
+            >
+              <span></span>
+            </span>
+
+            <span class="brand-mark__word">
+              فلسفة <em>ببوصلة</em>
+            </span>
+
+          </div>
+
+
+          <div class="topbar__center">
+
+            <span class="topbar__label">
+              جلسة الاختبار
+            </span>
+
+            <strong id="topbar-progress">
+              السؤال 01 / 115
+            </strong>
+
+          </div>
+
+
+          <button
+            id="quit-button"
+            class="text-button"
+            type="button"
+          >
+            <span aria-hidden="true">×</span>
+            إنهاء الجلسة
+          </button>
+
+        </header>
+
+
+
+        <div class="quiz-layout">
+
+          <!-- الشريط الجانبي -->
+          <aside
+            class="study-rail"
+            aria-label="معلومات الاختبار"
+          >
+
+            <div class="rail-section rail-section--intro">
+
+              <p class="eyebrow eyebrow--small">
+                مسار التعلم
+              </p>
+
+              <h2>
+                الفلسفة والعلوم
+                <br />
+                الإنسانية
+              </h2>
+
+              <p class="rail-subtitle">
+                الثالث الثانوي الأدبي
+              </p>
+
+            </div>
+
+
+            <div class="rail-section">
+
+              <div class="rail-label-row">
+
+                <span>
+                  التقدم الكلي
+                </span>
+
+                <strong id="rail-percent">
+                  0%
+                </strong>
+
+              </div>
+
+
+              <div class="progress-track progress-track--rail">
+                <span id="rail-progress-bar"></span>
+              </div>
+
+
+              <p class="rail-caption">
+
+                <span id="answered-count">
+                  0
+                </span>
+
+                من
+
+                <span id="rail-total-count">
+                  115
+                </span>
+
+                سؤالًا تمت الإجابة عنه
+
+              </p>
+
+            </div>
+
+
+            <div class="rail-section rail-section--map">
+
+              <div class="rail-label-row">
+
+                <span>
+                  خريطة الأسئلة
+                </span>
+
+                <span class="map-legend">
+                  <i></i>
+                  مُجاب
+                </span>
+
+              </div>
+
+
+              <div
+                id="question-map"
+                class="question-map"
+                aria-label="التنقل بين الأسئلة"
+              ></div>
+
+            </div>
+
+
+            <div class="rail-quote">
+
+              <span class="quote-mark">
+                “
+              </span>
+
+              <p>
+                الفلسفة ليست حفظًا للأجوبة،
+                بل تدريبًا على صياغة السؤال.
+              </p>
+
+              <span class="quote-line"></span>
+
+            </div>
+
+          </aside>
+
+
+
+          <!-- منطقة السؤال -->
+          <main class="question-area">
+
+            <div class="question-head">
+
+              <div>
+
+                <p class="eyebrow eyebrow--small">
+
+                  <span class="eyebrow__line"></span>
+
+                  <span id="unit-label">
+                    الوحدة الأولى
+                  </span>
+
+                </p>
+
+
+                <p
+                  id="lesson-label"
+                  class="question-head__lesson"
+                >
+                  قوانين الفكر
+                </p>
+
+              </div>
+
+
+              <div class="question-number">
+
+                <span id="question-number">
+                  01
+                </span>
+
+                <small>
+                  /
+                  <span id="question-total">
+                    115
+                  </span>
+                </small>
+
+              </div>
+
+            </div>
+
+
+            <div class="progress-track progress-track--main">
+              <span id="main-progress-bar"></span>
+            </div>
+
+
+            <article
+              class="question-card"
+              aria-live="polite"
+            >
+
+              <div class="question-card__accent"></div>
+
+
+              <div class="question-card__content">
+
+                <div class="question-card__tag">
+                  اختر إجابة واحدة
+                </div>
+
+
+                <h1 id="question-text">
+                  ...
+                </h1>
+
+
+                <div
+                  id="answers-list"
+                  class="answers-list"
+                  role="radiogroup"
+                  aria-label="خيارات الإجابة"
+                ></div>
+
+
+                <div
+                  id="source-note"
+                  class="source-note"
+                ></div>
+
+              </div>
+
+            </article>
+
+
+            <div class="question-actions">
+
+              <button
+                id="prev-button"
+                class="button button--ghost"
+                type="button"
+              >
+                <span aria-hidden="true">→</span>
+                السؤال السابق
+              </button>
+
+
+              <div
+                class="action-status"
+                id="action-status"
+                aria-live="polite"
+              >
+                اختر إجابة للمتابعة
+              </div>
+
+
+              <button
+                id="next-button"
+                class="button button--primary"
+                type="button"
+              >
+                السؤال التالي
+                <span aria-hidden="true">←</span>
+              </button>
+
+
+              <button
+                id="finish-button"
+                class="button button--finish"
+                type="button"
+                hidden
+              >
+                إنهاء الاختبار
+                <span aria-hidden="true">✓</span>
+              </button>
+
+            </div>
+
+          </main>
+
+        </div>
+
+      </section>
+
+
+
+      <!-- =========================
+           شاشة النتيجة
+      ========================== -->
+      <section
+        id="result-screen"
+        class="screen screen--result"
+        aria-labelledby="result-title"
+        hidden
+      >
+
+        <div class="result-shell">
+
+
+          <div class="result-header">
+
+            <div class="brand-mark">
+
+              <span
+                class="brand-mark__icon"
+                aria-hidden="true"
+              >
+                <span></span>
+              </span>
+
+              <span class="brand-mark__word">
+                فلسفة <em>ببوصلة</em>
+              </span>
+
+            </div>
+
+
+            <span class="result-header__label">
+              نتيجة المحاولة
+            </span>
+
+          </div>
+
+
+
+          <div class="result-hero">
+
+            <p class="eyebrow">
+
+              <span class="eyebrow__line"></span>
+
+              أحسنت الوصول إلى النهاية
+
+            </p>
+
+
+            <h1 id="result-title">
+              هذه هي
+              <span>حصيلتك.</span>
+            </h1>
+
+
+            <p class="result-lead">
+              كل إجابة صحيحة هي خطوة إضافية نحو فهم أعمق.
+            </p>
+
+          </div>
+
+
+
+          <div class="result-grid">
+
+
+            <!-- بطاقة النتيجة -->
+            <div class="score-card">
+
+              <div
+                class="score-ring"
+                id="score-ring"
+              >
+
+                <div class="score-ring__inner">
+
+                  <strong id="score-percent">
+                    0%
+                  </strong>
+
+                  <span>
+                    النسبة
+                  </span>
+
+                </div>
+
+              </div>
+
+
+              <div class="score-copy">
+
+                <span class="score-copy__label">
+                  النتيجة النهائية
+                </span>
+
+
+                <strong>
+
+                  <span id="score-correct">
+                    0
+                  </span>
+
+                  <small>
+                    /
+                    <span id="score-total">
+                      115
+                    </span>
+                  </small>
+
+                </strong>
+
+
+                <span>
+                  إجابة صحيحة
+                </span>
+
+              </div>
+
+            </div>
+
+
+
+            <!-- تفصيل النتيجة -->
+            <div class="breakdown-card">
+
+              <div class="breakdown-card__heading">
+
+                <span>
+                  تفصيل المحاولة
+                </span>
+
+                <span id="result-message">
+                  واصل التقدم
+                </span>
+
+              </div>
+
+
+              <div class="breakdown-row">
+
+                <span>
+                  <i class="breakdown-dot breakdown-dot--correct"></i>
+                  إجابات صحيحة
+                </span>
+
+                <strong id="breakdown-correct">
+                  0
+                </strong>
+
+              </div>
+
+
+              <div class="breakdown-row">
+
+                <span>
+                  <i class="breakdown-dot breakdown-dot--wrong"></i>
+                  إجابات خاطئة
+                </span>
+
+                <strong id="breakdown-wrong">
+                  0
+                </strong>
+
+              </div>
+
+
+              <div class="breakdown-row">
+
+                <span>
+                  <i class="breakdown-dot breakdown-dot--empty"></i>
+                  دون إجابة
+                </span>
+
+                <strong id="breakdown-empty">
+                  0
+                </strong>
+
+              </div>
+
+
+              <button
+                id="restart-button"
+                class="button button--primary button--full"
+                type="button"
+              >
+                ابدأ محاولة جديدة
+                <span aria-hidden="true">↻</span>
+              </button>
+
+            </div>
+
+          </div>
+
+
+
+          <!-- مراجعة الإجابات -->
+          <div class="review-section">
+
+            <div class="review-heading">
+
+              <div>
+
+                <p class="eyebrow eyebrow--small">
+
+                  <span class="eyebrow__line"></span>
+
+                  أرشيف المحاولة
+
+                </p>
+
+
+                <h2>
+                  مراجعة الإجابات
+                </h2>
+
+              </div>
+
+
+              <span
+                id="review-count-label"
+                class="review-count"
+              >
+                115 سؤالًا
+              </span>
+
+            </div>
+
+
+            <div
+              id="review-list"
+              class="review-list"
+            ></div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+    </main>
+
+
+
+    <!-- ملفات JavaScript -->
+    <script src="questions.js"></script>
+    <script src="quiz.js"></script>
+    <script src="app.js"></script>
+
+  </body>
+</html>
